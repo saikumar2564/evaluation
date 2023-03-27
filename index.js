@@ -7,7 +7,9 @@ const { userRouter } = require("./routes/userroute")
 const app=express()
 app.use(express.json())
 
-
+app.get("/",(req,res)=>{
+    res.send("welcome backend")
+})
 app.use("/users",userRouter)
 app.use(authenticate)
 app.use("/",postRouter)
